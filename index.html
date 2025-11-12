@@ -5,87 +5,158 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Praça Norte Celulares - Venda de celulares novos e seminovos com garantia em São José do Rio Preto.">
   <title>Praça Norte Celulares</title>
-</head>
-<body style="margin:0; font-family:Arial, sans-serif; background-color:#f4f4f4;">
 
-  <!-- Cabeçalho -->
-  <header style="background-color:#00163A; text-align:center; padding:15px;">
-    <img 
-      src="https://i.postimg.cc/YSZpYsLV/Logo-png.jpg" 
-      alt="Logo da Praça Norte Celulares" 
-      style="max-width:250px; height:200px;"
-      loading="lazy">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #00163A;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header img {
+      max-width: 230px;
+      height: 180px;
+    }
+
+    nav {
+      background-color: #003366;
+      padding: 12px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #FFD700;
+    }
+
+    section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #00163A;
+      margin-bottom: 10px;
+    }
+
+    .banner img {
+      width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    iframe {
+      border: 0;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .caixa-contato {
+      background: white;
+      border-radius: 15px;
+      padding: 35px;
+      max-width: 600px;
+      margin: 50px auto;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .caixa-contato:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background-color: #00163A;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      border-radius: 50%;
+      padding: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="https://i.postimg.cc/YSZpYsLV/Logo-png.jpg" alt="Logo Praça Norte Celulares">
   </header>
 
-  <!-- Menu Sticky -->
-  <nav style="
-    background-color:#003366;
-    padding:10px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:1000;">
-    
-    <a href="https://www.instagram.com/pracainformatica" target="_blank" title="Instagram">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
-           alt="Instagram" 
-           style="width:28px; height:28px; vertical-align:middle; margin-right:15px;">
-    </a>
-
-    <a href="index.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">Início</a>
-    <a href="produtos.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">Produtos</a>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="produtos.html">Produtos</a>
+    <a href="sobre.html">Sobre Nós</a>
   </nav>
 
-  <!-- Texto Convidando -->
-  <section style="text-align:center; padding:20px;">
-    <h2 style="color:#00163A;">Venha conhecer nossas ofertas!</h2>
+  <section>
+    <h2>Venha conhecer nossas ofertas</h2>
     <p>Trabalhamos com aparelhos novos e seminovos, todos avaliados e com garantia.</p>
   </section>
 
-  <!-- Banner Promocional -->
-  <section style="text-align:center; background-color:#f4f4f4; padding:30px 0;">
-    <img 
-      src="https://i.postimg.cc/xTvy7rfD/Promocao-Usados.jpg" 
-      alt="Promoção de troca de celulares" 
-      style="width:400px; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);" 
-      loading="lazy">
+  <section class="banner">
+    <img src="https://i.postimg.cc/xTvy7rfD/Promocao-Usados.jpg" alt="Promoção de celulares">
   </section>
 
-<!-- LOCALIZAÇÃO -->
-<section style="text-align:center; padding:40px 20px;">
-  <h2 style="color:#00163A; font-size:28px; margin-bottom:15px;">📍 Localização</h2>
-  <p style="color:#333; font-size:16px; margin-bottom:25px;">
-    Encontre a <strong>Praça Norte Celulares</strong> facilmente no mapa abaixo.
-  </p>
+  <section>
+    <h2>Localização</h2>
+    <p>Encontre a Praça Norte Celulares facilmente no mapa abaixo.</p>
 
-  <!-- Mapa -->
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.3528413061704!2d-49.388474789881045!3d-20.769892780735375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdace81ec33a35%3A0xa1e0ef9b71447a92!2sPra%C3%A7a%20Norte%20Celulares!5e1!3m2!1spt-BR!2sbr!4v1762785930303!5m2!1spt-BR!2sbr"
-    width="600" 
-    height="450" 
-    style="border:0; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.3);" 
-    allowfullscreen 
-    loading="lazy">
-  </iframe>
-</section>
-
-  <!-- Contato -->
-  <section style="text-align:center; padding:20px;">
-    <h2 style="color:#00163A;">Contato</h2>
-    <p>Telefone: (17) 98828-0521</p>
-    <p>Email: contato@loja.com</p>
-
-    <h3 style="color:#00163A;">Horário de funcionamento:</h3> 
-    <p>Segunda a domingo: 10:00 – 22:00</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.3528413061704!2d-49.388474789881045!3d-20.769892780735375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdace81ec33a35%3A0xa1e0ef9b71447a92!2sPra%C3%A7a%20Norte%20Celulares!5e1!3m2!1spt-BR!2sbr!4v1762785930303!5m2!1spt-BR!2sbr"
+      width="600" height="450" allowfullscreen loading="lazy"></iframe>
   </section>
 
-  <!-- Rodapé -->
-  <footer style="background-color:#00163A; color:white; text-align:center; padding:10px;">
-    <p>&copy; 2025 Praça Norte Celulares</p>
+  <section class="caixa-contato">
+    <h2>Contato</h2>
+    <p><strong>Telefone:</strong> (17) 98828-0521</p>
+    <p><strong>Email:</strong> contato@loja.com</p>
+    <p><strong>Horário de funcionamento:</strong> Segunda a domingo: 10:00 – 22:00</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Praça Norte Celulares - Todos os Direitos Reservados</p>
   </footer>
+<!-- Instagram flutuante -->
+<a href="https://www.instagram.com/pracainformatica" target="_blank"
+   style="position: fixed; bottom: 90px; right: 20px; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+          border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+       alt="Instagram" 
+       style="width:40px; height:40px;">
+</a>
 
-
-  <!-- Botão flutuante do WhatsApp -->
+<!-- WhatsApp flutuante -->
 <a href="https://wa.me/5517988280521" target="_blank" 
    style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 

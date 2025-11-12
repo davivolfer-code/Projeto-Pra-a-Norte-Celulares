@@ -6,13 +6,36 @@
 <title>Produtos - Praça Norte Celulares</title>
 <body style="font-family: Arial, sans-serif; margin:0; padding:0; background-color:#f4f4f4">
 
+  <style>
+  .produto {
+    background:white;
+    border-radius:10px;
+    width:250px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .produto:hover {
+    transform: scale(1.07);
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  }
+
+  .produto img {
+    transition: transform 0.4s ease;
+  }
+
+  .produto:hover img {
+    transform: scale(1.05);
+  }
+</style>
 <!-- Cabeçalho centralizado -->
 <header style="background-color:#00163A; text-align:center; padding:15px;">
     <img src="https://i.postimg.cc/YSZpYsLV/Logo-png.jpg" 
          alt="Praça Norte Celulares" 
          style="max-width:250px; height:200px;">
 </header>
-<!-- MENU STICKY COM INSTAGRAM -->
 <nav style="
     background-color:#003366;
     padding:10px;
@@ -21,13 +44,10 @@
     top:0;
     z-index:1000;
 ">
-    <a href="https://www.instagram.com/pracainformatica" target="_blank" title="Instagram">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
-           alt="Instagram" 
-           style="width:28px; height:28px; vertical-align:middle; margin-right:15px;">
-    </a>
+<!--Menu-->
     <a href="index.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">Início</a>
     <a href="produtos.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">Produtos</a>
+    <a href="sobre.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">Sobre Nós</a>
 </nav>
 
 <!-- Título -->
@@ -79,14 +99,22 @@
 
 <!-- Rodapé -->
 <footer style="background-color:#00163A; color:white; text-align:center; padding:10px;">
-  <p>@ 2025 Praça Norte Celulares</p>
+  <p>&copy; 2025 Praça Norte Celulares - Todos os Direitos Reservados</p>
 </footer>
 
-<!-- Botão flutuante do WhatsApp -->
+<!-- WhatsApp flutuante -->
 <a href="https://wa.me/5517988280521" target="_blank" 
    style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
        alt="WhatsApp" 
+       style="width:40px; height:40px;">
+</a>
+<!-- Instagram flutuante -->
+<a href="https://www.instagram.com/pracainformatica" target="_blank"
+   style="position: fixed; bottom: 90px; right: 20px; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+          border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+       alt="Instagram" 
        style="width:40px; height:40px;">
 </a>
 

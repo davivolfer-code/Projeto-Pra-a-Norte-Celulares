@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre Nós - Praça Norte Celulares</title>
+<style>
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+  }
+
+  header {
+    background-color: #00163A;
+    text-align: center;
+    padding: 15px;
+  }
+
+  header img {
+    max-width: 250px;
+    height: 200px;
+  }
+
+  nav {
+    background-color: #003366;
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  /* Seção principal */
+  .container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+  .sobre-info {
+    padding: 40px;
+    text-align: left;
+  }
+
+  .sobre-info h2 {
+    color: #00163A;
+    margin-bottom: 15px;
+    font-size: 28px;
+  }
+
+  .sobre-info p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .sobre-imagem {
+    background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwNfX0EtqE0ZNczJ4axzsk-1bP0Bg5NQb7FxptmYQidw8t36kYtTZr83tc7ByPtZrSG9KrzAgeuWRTiHeEhL0-M4JT3hF-Ytgwp7o9p_DxdJw7XBFgxmS_1ddxqBjv5cz5CoRBT=s680-w680-h510-rw');
+    background-size: cover;
+    background-position: center;
+    min-height: 280px;
+  }
+
+  /* Card de contato */
+  .contato-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin: 50px auto;
+    text-align: center;
+  }
+
+  .contato-card h3 {
+    color: #00163A;
+    margin-bottom: 10px;
+  }
+
+  .contato-card p {
+    color: #333;
+    font-size: 15px;
+    margin: 8px 0;
+  }
+
+  .instagram {
+    margin-top: 18px;
+  }
+
+  .instagram a img {
+    width: 42px;
+    height: 42px;
+    transition: transform 0.3s ease;
+  }
+
+  .instagram a img:hover {
+    transform: scale(1.1);
+  }
+
+  footer {
+    background-color: #00163A;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="https://i.postimg.cc/YSZpYsLV/Logo-png.jpg" alt="Praça Norte Celulares">
+</header>
+
+<nav>
+  <a href="index.html">Início</a>
+  <a href="produtos.html">Produtos</a>
+  <a href="sobre.html">Sobre Nós</a>
+</nav>
+
+<!-- Container Principal -->
+<section class="container">
+  <div class="sobre-info">
+    <h2>Quem Somos</h2>
+    <p>A <strong>Praça Norte Celulares</strong> é uma empresa especializada na venda de celulares novos e seminovos em São José do Rio Preto. 
+       Nosso objetivo é oferecer tecnologia acessível, atendimento personalizado e total confiança em cada compra.</p>
+
+    <p>Com anos de experiência no mercado, garantimos qualidade e segurança em todos os aparelhos, 
+       sempre buscando entregar o melhor custo-benefício e uma experiência positiva aos nossos clientes.</p>
+
+    <p>Além das vendas, oferecemos suporte, troca e avaliação dos aparelhos, prezando sempre pela transparência e satisfação de quem confia em nosso trabalho.</p>
+  </div>
+
+  <div class="sobre-imagem"></div>
+</section>
+
+<!-- Card de contato -->
+<section class="contato-card">
+  <h3>Fale Conosco</h3>
+  <p><strong>Telefone:</strong> (17) 98828-0521</p>
+  <p><strong>Email:</strong> contato@loja.com</p>
+  <p><strong>Horário:</strong> Segunda a domingo, das 10h às 22h</p>
+
+  <div class="instagram" style="margin-top:18px;">
+    <a href="https://www.instagram.com/pracainformatica" target="_blank" title="Instagram Oficial" style="margin-right:10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width:42px; height:42px; transition:transform 0.3s ease;">
+    </a>
+
+    <!-- Ícone WhatsApp ao lado -->
+    <a href="https://wa.me/5517988280521" target="_blank" title="Fale no WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:42px; height:42px; transition:transform 0.3s ease;">
+    </a>
+
+    <p style="margin-top:8px;">Acompanhe nossas ofertas no Instagram e WhatsApp</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Praça Norte Celulares - Todos os Direitos Reservados</p>
+</footer>
+
+<!-- WhatsApp flutuante -->
+<a href="https://wa.me/5517988280521" target="_blank" 
+   style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+       alt="WhatsApp" 
+       style="width:40px; height:40px;">
+</a>
+<!-- Instagram flutuante -->
+<a href="https://www.instagram.com/pracainformatica" target="_blank"
+   style="position: fixed; bottom: 90px; right: 20px; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+          border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+       alt="Instagram" 
+       style="width:40px; height:40px;">
+</a>
+
+</a>
+</body>
+</html>
