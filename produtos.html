@@ -4,47 +4,70 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Produtos - Praça Norte Celulares</title>
-</head>
-<body style="font-family: Arial, sans-serif; margin:0; padding:0; background-color:#f4f4f4;">
+<body style="font-family: Arial, sans-serif; margin:0; padding:0; background-color:#f4f4f4">
 
-<!-- Cabeçalho -->
-<header style="background-color:#00163A; text-align:left; padding:15px;">
+<!-- Cabeçalho centralizado -->
+<header style="background-color:#00163A; text-align:center; padding:15px;">
     <img src="https://i.postimg.cc/YSZpYsLV/Logo-png.jpg" 
          alt="Praça Norte Celulares" 
-         style="max-width:250px; width:100%; height:200px;">
+         style="max-width:250px; height:200px;">
 </header>
-
-<!-- Menu -->
-<nav style="background-color:#003366; padding:10px; text-align:center;">
+<!-- MENU STICKY COM INSTAGRAM -->
+<nav style="
+    background-color:#003366;
+    padding:10px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+">
+    <a href="https://www.instagram.com/pracainformatica" target="_blank" title="Instagram">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+           alt="Instagram" 
+           style="width:28px; height:28px; vertical-align:middle; margin-right:15px;">
+    </a>
     <a href="index.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">Início</a>
     <a href="produtos.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">Produtos</a>
 </nav>
 
 <!-- Título -->
-<h2 style="text-align:center; margin-top:20px; color:#00163A;">📱 Nossos Produtos</h2>
+<h2 style="text-align:center; margin-top:20px; color:#00163A;">Nossos Produtos</h2>
+
+<!-- BARRA DE PESQUISA -->
+<div style="text-align:center; margin:20px;">
+  <input type="text" id="busca" onkeyup="filtrarProdutos()" placeholder="Buscar produtos..." 
+         style="width:60%; max-width:400px; padding:10px; border:1px solid #ccc; border-radius:8px; font-size:16px;">
+</div>
 
 <!-- Grade de Produtos -->
-<section style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; padding:20px;">
+<section id="lista-produtos" style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; padding:20px;">
 
-  <div style="background:white; border-radius:10px; width:250px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-      <img src="https://encurtador.com.br/kRIh" alt="Celular 1" style="width:200px; height:auto; border-radius:8px;">
+  <div class="produto" style="background:white; border-radius:10px; width:250px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <img src="https://images.samsung.com/is/image/samsung/p6pim/in/sm-a146blgdins/gallery/in-galaxy-a14-5g-sm-a146-sm-a146blgdins-534856959?$684_547_PNG$" alt="Samsung Galaxy A14" style="width:200px; height:auto; border-radius:8px;">
       <h3>Samsung Galaxy A14</h3>
       <p>Preço: <strong>R$ 1.200,00</strong></p>
       <p style="font-size:14px; color:#555;">Tela 6.6” | 128GB | Câmera 50MP</p>
   </div>
 
-  <div style="background:white; border-radius:10px; width:250px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-      <img src="https://i.postimg.cc/mZM2SG0C/celular2.jpg" alt="Celular 2" style="width:200px; height:auto; border-radius:8px;">
+  <div class="produto" style="background:white; border-radius:10px; width:250px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <img src="https://imgs.casasbahia.com.br/1541095367/1xg.jpg?imwidth=500" alt="iPhone 13" style="width:200px; height:auto; border-radius:8px;">
       <h3>iPhone 13</h3>
       <p>Preço: <strong>R$ 4.999,00</strong></p>
       <p style="font-size:14px; color:#555;">Tela 6.1” | 128GB | Câmera dupla</p>
   </div>
 
-  <div style="background:white; border-radius:10px; width:250px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-      <img src="https://i.postimg.cc/43fRhfrF/celular3.jpg" alt="Celular 3" style="width:200px; height:auto; border-radius:8px;">
+  <div class="produto" style="background:white; border-radius:10px; width:250px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_897724-MLA96120836979_102025-O.webp" alt="Motorola G54" style="width:200px; height:auto; border-radius:8px;">
       <h3>Motorola G54</h3>
       <p>Preço: <strong>R$ 1.399,00</strong></p>
       <p style="font-size:14px; color:#555;">Tela 6.5” | 256GB | Câmera 50MP</p>
+  </div>
+
+  <div class="produto" style="background:white; border-radius:10px; width:250px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <img src="https://http2.mlstatic.com/D_Q_NP_945246-MLA95645764654_102025-O.webp" alt="Xiaomi Redmi Note 13" style="width:200px; height:auto; border-radius:8px;">
+      <h3>Xiaomi Redmi Note 13</h3>
+      <p>Preço: <strong>R$ 1.799,00</strong></p>
+      <p style="font-size:14px; color:#555;">Tela 6.7” | 256GB | Bateria 5000mAh</p>
   </div>
 
 </section>
@@ -58,6 +81,27 @@
 <footer style="background-color:#00163A; color:white; text-align:center; padding:10px;">
   <p>@ 2025 Praça Norte Celulares</p>
 </footer>
+
+<!-- Botão flutuante do WhatsApp -->
+<a href="https://wa.me/5517988280521" target="_blank" 
+   style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+       alt="WhatsApp" 
+       style="width:40px; height:40px;">
+</a>
+
+<!-- Script de pesquisa -->
+<script>
+function filtrarProdutos() {
+  const termo = document.getElementById("busca").value.toLowerCase();
+  const produtos = document.querySelectorAll(".produto");
+
+  produtos.forEach(produto => {
+    const nome = produto.querySelector("h3").textContent.toLowerCase();
+    produto.style.display = nome.includes(termo) ? "block" : "none";
+  });
+}
+</script>
 
 </body>
 </html>
