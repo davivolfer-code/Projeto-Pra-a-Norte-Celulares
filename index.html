@@ -1,128 +1,225 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Praça Norte Celulares - Venda de celulares novos e seminovos com garantia em São José do Rio Preto.">
-  <title>Praça Norte Celulares</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praça Norte Celulares</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-    }
+<style>
+  /* RESET E BASE */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    header {
-      background-color: #00163A;
-      text-align: center;
-      padding: 20px 0;
-    }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden; /* evita qualquer corte horizontal */
+  }
 
-    header img {
-      max-width: 230px;
-      height: 180px;
-    }
+  /* HEADER */
+  header {
+    width: 100%;
+    background-color: #00163A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  }
 
-    nav {
-      background-color: #003366;
-      padding: 12px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+  header img {
+    height: 75px;
+    width: auto;
+  }
 
-    nav a {
-      color: white;
-      margin: 0 18px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
+ /* --- MENU IDÊNTICO AO DA OUTRA PÁGINA --- */
+header {
+  width: 100%;
+  background-color: #00163A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 28px;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+}
 
-    nav a:hover {
-      color: #FFD700;
-    }
+header img {
+  height: 85px;
+  width: auto;
+}
 
-    section {
-      text-align: center;
-      padding: 40px 20px;
-    }
+/* MENU */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
 
-    h2 {
-      color: #00163A;
-      margin-bottom: 10px;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  transition: 0.25s;
+}
 
-    .banner img {
-      width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
-    }
+nav a:hover {
+  opacity: 0.6;
+  transform: translateY(-2px);
+}
 
-    iframe {
-      border: 0;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    }
+/* RESPONSIVO - IGUAL AO DA OUTRA PÁGINA */
+@media (max-width: 850px) {
 
-    .caixa-contato {
-      background: white;
-      border-radius: 15px;
-      padding: 35px;
-      max-width: 600px;
-      margin: 50px auto;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease;
-    }
+  header {
+    padding: 14px 22px;
+  }
 
-    .caixa-contato:hover {
-      transform: translateY(-5px);
-    }
+  nav {
+    gap: 18px;
+  }
 
-    footer {
-      background-color: #00163A;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
+  nav a {
+    font-size: 17px;
+    letter-spacing: 0.4px;
+  }
+}
 
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      border-radius: 50%;
-      padding: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      z-index: 1000;
-      transition: transform 0.3s;
-    }
+  /* MAIN */
+  main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+  }
 
-    .whatsapp-btn:hover {
-      transform: scale(1.1);
-    }
-  </style>
+  section {
+    margin-bottom: 60px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  h1, h2 {
+    color: #00163A;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  /* BOTÃO */
+  .btn-ver-produtos {
+    display: inline-block;
+    background-color: #00163A;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .btn-ver-produtos:hover {
+    opacity: 0.9;
+  }
+
+  /* BANNER */
+  .banner img {
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+  }
+
+  /* MAPA */
+  iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  /* CONTATO */
+  .caixa-contato {
+    background: white;
+    border-radius: 15px;
+    padding: 35px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+
+  /* RODAPÉ */
+  footer {
+    background-color: #00163A;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 14px;
+  }
+
+  /* BOTÕES FLUTUANTES */
+  .btn-flutuante {
+    position: fixed;
+    right: 20px;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: 0.3s;
+  }
+
+  .btn-flutuante:hover {
+    transform: scale(1.1);
+  }
+
+  .btn-instagram { bottom: 85px; }
+  .btn-whatsapp { bottom: 20px; }
+
+</style>
 </head>
 
 <body>
 
-  <header>
-    <img src="https://i.postimg.cc/YSZpYsLV/Logo-png.jpg" alt="Logo Praça Norte Celulares">
-  </header>
-
+<header>
+  <a href="index.html"><img src="https://i.postimg.cc/pL2chMs1/Sem-Ti-tulo-2.png"></a>
   <nav>
-    <a href="index.html">Início</a>
-    <a href="produtos.html">Produtos</a>
-    <a href="sobre.html">Sobre Nós</a>
+    <a href="index.html">INÍCIO</a>
+    <a href="produtos.html">PRODUTOS</a>
+    <a href="sobre.html">SOBRE NÓS</a>
   </nav>
+</header>
+
+<main>
 
   <section>
-    <h2>Venha conhecer nossas ofertas</h2>
-    <p>Trabalhamos com aparelhos novos e seminovos, todos avaliados e com garantia.</p>
+    <h1>Venha conhecer nossas ofertas</h1>
+    <h2>Trabalhamos com aparelhos novos e seminovos, todos avaliados e com garantia.</h2>
+    <a href="produtos.html" class="btn-ver-produtos">Ver Produtos</a>
   </section>
 
   <section class="banner">
@@ -130,38 +227,31 @@
   </section>
 
   <section>
-    <h2>Localização</h2>
-    <p>Encontre a Praça Norte Celulares facilmente no mapa abaixo.</p>
+    <h1>Localização</h1>
+    <h2>Encontre a Praça Norte Celulares facilmente no mapa abaixo.</h2>
 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.3528413061704!2d-49.388474789881045!3d-20.769892780735375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdace81ec33a35%3A0xa1e0ef9b71447a92!2sPra%C3%A7a%20Norte%20Celulares!5e1!3m2!1spt-BR!2sbr!4v1762785930303!5m2!1spt-BR!2sbr"
-      width="600" height="450" allowfullscreen loading="lazy"></iframe>
+    <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.5285875348463!2d-49.388474789881045!3d-20.769892780735375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdace81ec33a35%3A0xa1e0ef9b71447a92!2sPra%C3%A7a%20Norte%20Celulares!5e0!3m2!1spt-BR!2sbr!4v1763157420942!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe></p>
   </section>
 
   <section class="caixa-contato">
     <h2>Contato</h2>
     <p><strong>Telefone:</strong> (17) 98828-0521</p>
-    <p><strong>Email:</strong> contato@loja.com</p>
-    <p><strong>Horário de funcionamento:</strong> Segunda a domingo: 10:00 – 22:00</p>
+    <p><strong>Horário:</strong> 10:00 – 22:00 (todos os dias)</p>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Praça Norte Celulares - Todos os Direitos Reservados</p>
-  </footer>
-<!-- Instagram flutuante -->
-<a href="https://www.instagram.com/pracainformatica" target="_blank"
-   style="position: fixed; bottom: 90px; right: 20px; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-          border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
-       alt="Instagram" 
-       style="width:40px; height:40px;">
+</main>
+
+<footer>
+  <p>&copy; 2025 Praça Norte Celulares - Todos os Direitos Reservados</p>
+</footer>
+
+<a href="https://www.instagram.com/pracainformatica" target="_blank" class="btn-flutuante btn-instagram">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" width="40">
 </a>
 
-<!-- WhatsApp flutuante -->
-<a href="https://wa.me/5517988280521" target="_blank" 
-   style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-       alt="WhatsApp" 
-       style="width:40px; height:40px;">
+<a href="https://wa.me/5517988280521" target="_blank" class="btn-flutuante btn-whatsapp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="40">
 </a>
+
 </body>
 </html>

@@ -4,129 +4,344 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Produtos - Praça Norte Celulares</title>
-<body style="font-family: Arial, sans-serif; margin:0; padding:0; background-color:#f4f4f4">
 
-  <style>
-  .produto {
-    background:white;
-    border-radius:10px;
-    width:250px;
-    padding:15px;
-    text-align:center;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin:0; padding:0;
+  background-color:#f4f4f4;
+  overflow-x: hidden;
+}
+
+/* ========================== */
+/*       MENU PROFISSIONAL    */
+/* ========================== */
+
+header {
+  width: 100%;
+  background-color: #00163A;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 28px;
+  box-sizing: border-box;
+
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+  overflow: hidden;
+}
+
+/* LOGO */
+header img {
+  height: 85px;
+  width: auto;
+}
+
+/* MENU */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  transition: 0.25s;
+}
+
+nav a:hover {
+  opacity: 0.6;
+  transform: translateY(-2px);
+}
+
+/* BOTÃO MOBILE */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.menu-btn div {
+  width: 30px;
+  height: 3.5px;
+  background: white;
+  transition: 0.3s;
+}
+
+/* MENU MOBILE */
+@media (max-width: 850px) {
+
+  nav {
+    position: fixed;
+    top: 110px;
+    right: -100%;
+    background-color: #00163A;
+
+    width: 100%;
+    padding: 25px 0;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+
+    transition: right 0.35s ease;
   }
 
-  .produto:hover {
-    transform: scale(1.07);
-    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  nav.ativo {
+    right: 0;
   }
 
-  .produto img {
-    transition: transform 0.4s ease;
+  .menu-btn {
+    display: flex;
   }
+}
 
-  .produto:hover img {
-    transform: scale(1.05);
-  }
+/* =================================== */
+/* RESTO DO SEU CÓDIGO (PRODUTOS ETC.) */
+/* =================================== */
+
+.produto {
+  background:white;
+  border-radius:10px;
+  width:250px;
+  padding:15px;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display:flex;
+  flex-direction:column;
+}
+.produto:hover {
+  transform: scale(1.07);
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+.produto img {
+  transition: transform 0.4s ease;
+}
+.produto:hover img {
+  transform: scale(1.05);
+}
+
+#lista-produtos {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
+  padding:20px;
+}
+
+/* Botões */
+.botoes-marcas {
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin:35px 0;
+  flex-wrap:wrap;
+}
+
+.botao-marca {
+  background:white;
+  border:3px solid #ccc;
+  border-radius:22px;
+  padding:25px 20px;
+  width:210px;
+  height:130px;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  transition:0.25s ease-in-out;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.botao-marca img {
+  width: 90px;
+  height: 55px;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.botao-marca span {
+  font-size:18px;
+  font-weight:bold;
+}
+
+.botao-marca:hover {
+  transform:scale(1.15);
+  border-color:#00163A;
+  box-shadow:0 6px 15px rgba(0,0,0,0.25);
+}
+
+.botao-marca.ativa {
+  border-color:#00163A;
+  transform:scale(1.15);
+  box-shadow:0 7px 18px rgba(0,0,0,0.3);
+}
+
+/* Busca */
+#busca {
+  width:60%;
+  max-width:400px;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:16px;
+}
+
 </style>
-<!-- Cabeçalho centralizado -->
-<header style="background-color:#00163A; text-align:center; padding:15px;">
-    <img src="https://i.postimg.cc/YSZpYsLV/Logo-png.jpg" 
-         alt="Praça Norte Celulares" 
-         style="max-width:250px; height:200px;">
+</head>
+
+<body>
+
+<!-- MENU NOVO -->
+<header>
+
+  <a href="index.html">
+    <img src="https://i.postimg.cc/pL2chMs1/Sem-Ti-tulo-2.png" alt="Praça Norte Celulares">
+  </a>
+
+  <div class="menu-btn" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+  </div>
+
+  <nav id="menu">
+    <a href="index.html">INÍCIO</a>
+    <a href="produtos.html">PRODUTOS</a>
+    <a href="sobre.html">SOBRE NÓS</a>
+  </nav>
+
 </header>
-<nav style="
-    background-color:#003366;
-    padding:10px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-">
-<!--Menu-->
-    <a href="index.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">Início</a>
-    <a href="produtos.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">Produtos</a>
-    <a href="sobre.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">Sobre Nós</a>
-</nav>
 
-<!-- Título -->
-<h2 style="text-align:center; margin-top:20px; color:#00163A;">Nossos Produtos</h2>
+<!-- ===== RESTO DO SEU SITE (NÃO MEXI EM NADA) ===== -->
 
-<!-- BARRA DE PESQUISA -->
-<div style="text-align:center; margin:20px;">
-  <input type="text" id="busca" onkeyup="filtrarProdutos()" placeholder="Buscar produtos..." 
-         style="width:60%; max-width:400px; padding:10px; border:1px solid #ccc; border-radius:8px; font-size:16px;">
+<h2 style="text-align:center; margin-top:20px; color:#00163A;">Escolha uma Marca</h2>
+
+<div class="botoes-marcas">
+  <div class="botao-marca ativa" onclick="selecionarMarca('todas', this)">
+    <img src="https://images.vexels.com/media/users/3/157570/isolated/preview/4b39b362c76ea5a00de62f8ff839b5ed-icone-de-smartphone-simples.png">
+    <span>Todas</span>
+  </div>
+
+  <div class="botao-marca" onclick="selecionarMarca('samsung', this)">
+    <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/14018566-logotipo-da-samsung-em-fundo-transparente-gratis-vetor.jpg">
+    <span>Samsung</span>
+  </div>
+
+  <div class="botao-marca" onclick="selecionarMarca('apple', this)">
+    <img src="https://upload.wik.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg">
+    <span>Apple</span>
+  </div>
+
+  <div class="botao-marca" onclick="selecionarMarca('motorola', this)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Motorola_new_logo.svg">
+    <span>Motorola</span>
+  </div>
+
+  <div class="botao-marca" onclick="selecionarMarca('xiaomi', this)">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcAYmWTjipYFWio7FKoWp8mPkrtOzqWenmAw&s">
+    <span>Xiaomi</span>
+  </div>
 </div>
 
-<!-- Grade de Produtos -->
-<section id="lista-produtos" style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; padding:20px;">
+<div style="text-align:center; margin:20px;">
+  <input type="text" id="busca" onkeyup="filtrarProdutos()" placeholder="Buscar modelo...">
+</div>
 
-  <div class="produto" style="background:white; border-radius:10px; width:250px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-      <img src="https://images.samsung.com/is/image/samsung/p6pim/in/sm-a146blgdins/gallery/in-galaxy-a14-5g-sm-a146-sm-a146blgdins-534856959?$684_547_PNG$" alt="Samsung Galaxy A14" style="width:200px; height:auto; border-radius:8px;">
+<section id="lista-produtos">
+
+  <div class="produto" data-marca="samsung">
+      <img src="https://images.samsung.com/is/image/samsung/p6pim/in/sm-a146blgdins/gallery/in-galaxy-a14-5g-sm-a146-sm-a146blgdins-534856959?$684_547_PNG$">
       <h3>Samsung Galaxy A14</h3>
-      <p>Preço: <strong>R$ 1.200,00</strong></p>
-      <p style="font-size:14px; color:#555;">Tela 6.6” | 128GB | Câmera 50MP</p>
+      <p><strong>R$ 1.200,00</strong></p>
+      <p>Tela 6.6” | 128GB | Câmera 50MP</p>
   </div>
 
-  <div class="produto" style="background:white; border-radius:10px; width:250px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-      <img src="https://imgs.casasbahia.com.br/1541095367/1xg.jpg?imwidth=500" alt="iPhone 13" style="width:200px; height:auto; border-radius:8px;">
+  <div class="produto" data-marca="apple">
+      <img src="https://imgs.casasbahia.com.br/1541095367/1xg.jpg?imwidth=500">
       <h3>iPhone 13</h3>
-      <p>Preço: <strong>R$ 4.999,00</strong></p>
-      <p style="font-size:14px; color:#555;">Tela 6.1” | 128GB | Câmera dupla</p>
+      <p><strong>R$ 4.999,00</strong></p>
+      <p>Tela 6.1” | 128GB | Câmera dupla</p>
   </div>
 
-  <div class="produto" style="background:white; border-radius:10px; width:250px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-      <img src="https://http2.mlstatic.com/D_NQ_NP_897724-MLA96120836979_102025-O.webp" alt="Motorola G54" style="width:200px; height:auto; border-radius:8px;">
+  <div class="produto" data-marca="motorola">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_897724-MLA96120836979_102025-O.webp">
       <h3>Motorola G54</h3>
-      <p>Preço: <strong>R$ 1.399,00</strong></p>
-      <p style="font-size:14px; color:#555;">Tela 6.5” | 256GB | Câmera 50MP</p>
+      <p><strong>R$ 1.399,00</strong></p>
+      <p>Tela 6.5” | 256GB | Câmera 50MP</p>
   </div>
 
-  <div class="produto" style="background:white; border-radius:10px; width:250px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-      <img src="https://http2.mlstatic.com/D_Q_NP_945246-MLA95645764654_102025-O.webp" alt="Xiaomi Redmi Note 13" style="width:200px; height:auto; border-radius:8px;">
+  <div class="produto" data-marca="xiaomi">
+      <img src="https://http2.mlstatic.com/D_Q_NP_945246-MLA95645764654_102025-O.webp">
       <h3>Xiaomi Redmi Note 13</h3>
-      <p>Preço: <strong>R$ 1.799,00</strong></p>
-      <p style="font-size:14px; color:#555;">Tela 6.7” | 256GB | Bateria 5000mAh</p>
+      <p><strong>R$ 1.799,00</strong></p>
+      <p>Tela 6.7” | 256GB | Bateria 5000mAh</p>
   </div>
 
 </section>
 
-<!-- Botão voltar -->
 <div style="text-align:center; margin-bottom:30px;">
   <a href="index.html" style="background-color:#00163A; color:white; padding:10px 20px; text-decoration:none; border-radius:5px;">← Voltar à página inicial</a>
 </div>
 
-<!-- Rodapé -->
 <footer style="background-color:#00163A; color:white; text-align:center; padding:10px;">
   <p>&copy; 2025 Praça Norte Celulares - Todos os Direitos Reservados</p>
 </footer>
 
-<!-- WhatsApp flutuante -->
-<a href="https://wa.me/5517988280521" target="_blank" 
+<a href="https://wa.me/5517988280521" target="_blank"
    style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-       alt="WhatsApp" 
-       style="width:40px; height:40px;">
-</a>
-<!-- Instagram flutuante -->
-<a href="https://www.instagram.com/pracainformatica" target="_blank"
-   style="position: fixed; bottom: 90px; right: 20px; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-          border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
-       alt="Instagram" 
-       style="width:40px; height:40px;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+       style="width:40px;">
 </a>
 
-<!-- Script de pesquisa -->
+<a href="https://www.instagram.com/pracainformatica" target="_blank"
+   style="position: fixed; bottom: 90px; right: 20px;
+          background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+          border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+       style="width:40px;">
+</a>
+
 <script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("ativo");
+}
+
+function selecionarMarca(marca, botaoClicado) {
+    document.querySelectorAll(".botao-marca").forEach(b => b.classList.remove("ativa"));
+    botaoClicado.classList.add("ativa");
+
+    const produtos = document.querySelectorAll(".produto");
+
+    produtos.forEach(produto => {
+        if (marca === "todas") {
+            produto.style.display = "flex";
+        } else {
+            produto.style.display = produto.dataset.marca === marca ? "flex" : "none";
+        }
+    });
+}
+
 function filtrarProdutos() {
   const termo = document.getElementById("busca").value.toLowerCase();
   const produtos = document.querySelectorAll(".produto");
 
   produtos.forEach(produto => {
     const nome = produto.querySelector("h3").textContent.toLowerCase();
-    produto.style.display = nome.includes(termo) ? "block" : "none";
+    produto.style.display = nome.includes(termo) ? "flex" : "none";
   });
 }
 </script>
