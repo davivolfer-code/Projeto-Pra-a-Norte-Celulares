@@ -23,3 +23,82 @@ body {
     letter-spacing: 1px;
 }
 
+/* CABEÇALHO AVALIAÇOES */
+.reviews-header {
+  text-align: center;
+  margin: 50px auto 30px;
+  font-family: "Inter", sans-serif;
+}
+/* LETRAS DO CABEÇALHO AVALIAÇOES */
+.reviews-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0b1220;
+  margin-bottom: 5px;
+}
+/* SUBTITULO CABEÇALHO */
+.reviews-header .subtitle {
+  font-size: 15px;
+  color: #6b7280;
+}
+
+/* posição e tamanho das avaliaçoes */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 30px auto;
+  font-family: "Inter", sans-serif;
+}
+
+/* BOX DAS AVALIAÇOES */
+.review-box {
+  background: #00163A;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* foto usuario */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 5px;
+}
+/* CONFIG avatar */
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #e5ecff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #163d93;
+  font-size: 16px;
+}
+/* config nomes das avaliaçoes */
+.name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #e5ecff;
+}
+
+/* estrelas */
+.stars {
+  font-size: 20px;
+  color: #ffb400;
+}
+
+/* comentarios */
+.comment {
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 1.4;
+}
