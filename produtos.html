@@ -6,17 +6,32 @@
 <title>Produtos - Praça Norte Celulares</title>
 
 <style>
-body {
-  font-family: Arial, sans-serif;
-  margin:0; padding:0;
-  background-color:#f4f4f4;
-  overflow-x: hidden;
-}
+  /* RESET E BASE */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+  }
+
+  main {
+    flex: 1; 
+  }
 
 /* ========================== */
 /*       MENU PROFISSIONAL    */
 /* ========================== */
 
+/* CABEÇALHO */
 header {
   width: 100%;
   background-color: #00163A;
@@ -33,76 +48,70 @@ header {
   z-index: 2000;
 
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  overflow: hidden;
-
-  font-family: Arial, sans-serif; 
 }
 
-/* LOGO */
 header img {
   height: 85px;
   width: auto;
 }
 
-  /* MENU */
+/* MENU DESKTOP */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.25s;
+}
+
+nav a:hover {
+  opacity: 0.6;
+  transform: translateY(-2px);
+}
+
+/* BOTÃO HAMBURGUER (APENAS NO CELULAR) */
+.menu-btn {
+  display: none;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* MOBILE */
+@media (max-width: 850px) {
   nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 60%;
+    background-color: #00163A;
+    flex-direction: column;
+    padding-top: 120px;
+    gap: 40px;
+    transition: 0.4s ease;
+    box-shadow: -6px 0 12px rgba(0,0,0,0.3);
   }
 
   nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.25s;
+    font-size: 22px;
   }
 
-  nav a:hover {
-    opacity: 0.6;
-    transform: translateY(-2px);
-  }
-/* BOTÃO MOBILE */
-.menu-btn {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-}
-
-.menu-btn div {
-  width: 30px;
-  height: 3.5px;
-  background: white;
-  transition: 0.3s;
-}
-
-/* MENU MOBILE */
-@media (max-width: 850px) {
-
-  nav {
-    position: fixed;
-    top: 110px;
-    right: -100%;
-    background-color: #00163A;
-
-    width: 100%;
-    padding: 25px 0;
-    flex-direction: column;
-    gap: 25px;
-    text-align: center;
-
-    transition: right 0.35s ease;
-  }
-
-  nav.ativo {
+  nav.active {
     right: 0;
   }
 
   .menu-btn {
-    display: flex;
+    display: block;
   }
 }
+
 
 /* =================================== */
 /* RESTO DO SEU CÓDIGO (PRODUTOS ETC.) */
@@ -214,24 +223,18 @@ header img {
 
 <!-- MENU NOVO -->
 <header>
+  <a href="index.html"><img src="https://i.postimg.cc/pL2chMs1/Sem-Ti-tulo-2.png"></a>
 
-  <a href="index.html">
-    <img src="https://i.postimg.cc/pL2chMs1/Sem-Ti-tulo-2.png" alt="Praça Norte Celulares">
-  </a>
-
-  <div class="menu-btn" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-  </div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
   <nav id="menu">
     <a href="index.html">INÍCIO</a>
     <a href="produtos.html">PRODUTOS</a>
     <a href="sobre.html">SOBRE NÓS</a>
   </nav>
-
 </header>
+
+
 
 <!-- ===== RESTO DO SEU SITE (NÃO MEXI EM NADA) ===== -->
 
@@ -1013,6 +1016,11 @@ function filtrarProdutos() {
     const nome = produto.querySelector("h3").textContent.toLowerCase();
     produto.style.display = nome.includes(termo) ? "flex" : "none";
   });
+}
+</script>
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
 }
 </script>
 
