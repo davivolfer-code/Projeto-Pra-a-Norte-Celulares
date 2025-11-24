@@ -31,26 +31,22 @@
 /*       MENU PROFISSIONAL    */
 /* ========================== */
 
-/* CABEÇALHO */
+/* HEADER */
 header {
   width: 100%;
   background-color: #00163A;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 12px 28px;
-  box-sizing: border-box;
-
+  padding: 12px 20px;
   position: sticky;
   top: 0;
   z-index: 2000;
-
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-header img {
+/* LOGO */
+.logo {
   height: 85px;
   width: auto;
 }
@@ -74,41 +70,51 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* BOTÃO HAMBURGUER (APENAS NO CELULAR) */
+/* BOTÃO HAMBURGUER */
 .menu-btn {
   display: none;
-  font-size: 32px;
+  font-size: 35px;
   color: white;
   cursor: pointer;
-  user-select: none;
 }
 
-/* MOBILE */
+/* ========================== */
+/*      RESPONSIVIDADE        */
+/* ========================== */
+
 @media (max-width: 850px) {
+
+  /* REDUZ O LOGO */
+  .logo {
+    height: 60px;
+  }
+
+  /* MOSTRA O BOTÃO */
+  .menu-btn {
+    display: block;
+  }
+
+  /* MENU MOBILE */
   nav {
     position: fixed;
     top: 0;
     right: -100%;
+    width: 65%;
     height: 100vh;
-    width: 60%;
     background-color: #00163A;
     flex-direction: column;
-    padding-top: 120px;
+    justify-content: center;
     gap: 40px;
     transition: 0.4s ease;
-    box-shadow: -6px 0 12px rgba(0,0,0,0.3);
-  }
-
-  nav a {
-    font-size: 22px;
+    box-shadow: -6px 0 12px rgba(0,0,0,0.4);
   }
 
   nav.active {
     right: 0;
   }
 
-  .menu-btn {
-    display: block;
+  nav a {
+    font-size: 22px;
   }
 }
 
@@ -223,7 +229,9 @@ nav a:hover {
 
 <!-- MENU NOVO -->
 <header>
-  <a href="index.html"><img src="https://i.postimg.cc/pL2chMs1/Sem-Ti-tulo-2.png"></a>
+  <a href="index.html">
+    <img class="logo" src="https://i.postimg.cc/pL2chMs1/Sem-Ti-tulo-2.png">
+  </a>
 
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
@@ -233,6 +241,7 @@ nav a:hover {
     <a href="sobre.html">SOBRE NÓS</a>
   </nav>
 </header>
+
 
 
 

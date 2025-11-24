@@ -32,86 +32,93 @@
   /* CABEÇALHO RESPONSIVO */
   /* =============================== */
 
-  header {
-    width: 100%;
-    background-color: #00163A;
+/* HEADER */
+header {
+  width: 100%;
+  background-color: #00163A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* LOGO */
+.logo {
+  height: 85px;
+  width: auto;
+}
 
-    padding: 12px 28px;
-    box-sizing: border-box;
+/* MENU DESKTOP */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
 
-    position: sticky;
-    top: 0;
-    z-index: 2000;
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.25s;
+}
 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+nav a:hover {
+  opacity: 0.6;
+  transform: translateY(-2px);
+}
+
+/* BOTÃO HAMBURGUER */
+.menu-btn {
+  display: none;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ========================== */
+/*      RESPONSIVIDADE        */
+/* ========================== */
+
+@media (max-width: 850px) {
+
+  /* REDUZ O LOGO */
+  .logo {
+    height: 60px;
   }
 
-  header img {
-    height: 85px;
-    width: auto;
+  /* MOSTRA O BOTÃO */
+  .menu-btn {
+    display: block;
   }
 
-  /* MENU DESKTOP */
+  /* MENU MOBILE */
   nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 65%;
+    height: 100vh;
+    background-color: #00163A;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    transition: 0.4s ease;
+    box-shadow: -6px 0 12px rgba(0,0,0,0.4);
+  }
+
+  nav.active {
+    right: 0;
   }
 
   nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.25s;
+    font-size: 22px;
   }
+}
 
-  nav a:hover {
-    opacity: 0.6;
-    transform: translateY(-2px);
-  }
-
-  /* BOTÃO HAMBURGUER */
-  .menu-btn {
-    display: none;
-    font-size: 35px;
-    color: white;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  /* MOBILE */
-  @media (max-width: 850px) {
-
-    .menu-btn {
-      display: block;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      height: 100vh;
-      width: 60%;
-      background-color: #00163A;
-      flex-direction: column;
-      justify-content: center;
-      gap: 40px;
-      transition: 0.4s ease;
-      box-shadow: -6px 0 12px rgba(0,0,0,0.3);
-    }
-
-    nav.active {
-      right: 0;
-    }
-
-    nav a {
-      font-size: 22px;
-    }
-  }
     /* --------------------------------
        ESTILO ORIGINAL DO SEU SOBRE
     --------------------------------*/
@@ -203,8 +210,10 @@
 <body>
 
   <!-- MENU IDÊNTICO AO INDEX -->
- <header>
-  <a href="index.html"><img src="https://i.postimg.cc/pL2chMs1/Sem-Ti-tulo-2.png"></a>
+<header>
+  <a href="index.html">
+    <img class="logo" src="https://i.postimg.cc/pL2chMs1/Sem-Ti-tulo-2.png">
+  </a>
 
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
@@ -214,6 +223,7 @@
     <a href="sobre.html">SOBRE NÓS</a>
   </nav>
 </header>
+
 
 
   <!-- SEÇÃO SOBRE -->
