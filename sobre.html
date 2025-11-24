@@ -50,6 +50,7 @@ header {
 .logo {
   height: 85px;
   width: auto;
+  transition: 0.3s;
 }
 
 /* MENU DESKTOP */
@@ -71,10 +72,10 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* BOTÃO HAMBURGUER */
+/* BOTÃO HAMBÚRGUER */
 .menu-btn {
   display: none;
-  font-size: 35px;
+  font-size: 36px;
   color: white;
   cursor: pointer;
 }
@@ -85,29 +86,31 @@ nav a:hover {
 
 @media (max-width: 850px) {
 
-  /* REDUZ O LOGO */
+  /* Reduz o logo */
   .logo {
     height: 60px;
   }
 
-  /* MOSTRA O BOTÃO */
+  /* Exibe o botão */
   .menu-btn {
     display: block;
   }
 
-  /* MENU MOBILE */
+  /* Menu mobile lateral */
   nav {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 65%;
+    width: 70%;
     height: 100vh;
     background-color: #00163A;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 40px;
-    transition: 0.4s ease;
-    box-shadow: -6px 0 12px rgba(0,0,0,0.4);
+    transition: right 0.35s ease-in-out;
+    box-shadow: -6px 0 12px rgba(0,0,0,0.35);
+    padding-bottom: 80px;
   }
 
   nav.active {
@@ -223,9 +226,6 @@ nav a:hover {
     <a href="sobre.html">SOBRE NÓS</a>
   </nav>
 </header>
-
-
-
   <!-- SEÇÃO SOBRE -->
   <section class="container">
     <div class="sobre-info">
