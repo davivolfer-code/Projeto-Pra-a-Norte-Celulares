@@ -7,6 +7,121 @@
   <title>Sobre Nós - Praça Norte Celulares</title>
 
   <style>
+    /* ============================== */
+/*   AVALIAÇÕES - ESTILIZAÇÃO    */
+/* ============================== */
+
+.reviews-header {
+  text-align: center;
+  margin: 50px 0 20px 0;
+  padding: 0 15px;
+}
+
+.reviews-header h2 {
+  color: #00163A;
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.reviews-header .subtitle {
+  color: #555;
+  font-size: 16px;
+}
+
+/* GRID DAS AVALIAÇÕES */
+.reviews-grid {
+  max-width: 1000px;
+  margin: 0 auto 60px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  padding: 0 20px;
+}
+
+/* BOX INDIVIDUAL */
+.review-box {
+  background: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Usuário + avatar */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  background-color: #00163A;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.name {
+  font-size: 17px;
+  color: #00163A;
+}
+
+/* Estrelas */
+.stars {
+  color: #f1c40f;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* Comentário */
+.comment {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ============================== */
+/*   RESPONSIVIDADE AVALIAÇÕES   */
+/* ============================== */
+
+/* Celulares */
+@media (max-width: 650px) {
+
+  .reviews-grid {
+    grid-template-columns: 1fr;  /* vira uma coluna */
+    gap: 18px;
+  }
+
+  .review-box {
+    padding: 18px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .comment {
+    font-size: 14px;
+  }
+
+  .reviews-header h2 {
+    font-size: 22px;
+  }
+}
+
   /* RESET E BASE */
   * {
     margin: 0;
