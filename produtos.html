@@ -106,9 +106,7 @@ nav a:hover {
   }
 }
 
-/* =================================== */
-/* RESTO DO SEU CÓDIGO (PRODUTOS ETC.) */
-/* =================================== */
+
 
 .produto {
   background:white;
@@ -226,7 +224,7 @@ nav a:hover {
 
 </header>
 
-<!-- ===== RESTO DO SEU SITE (NÃO MEXI EM NADA) ===== -->
+
 
 <h2 style="text-align:center; margin-top:20px; color:#00163A;">Escolha uma Marca</h2>
 
@@ -318,7 +316,7 @@ nav a:hover {
 <script>
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("ativo");
-}
+}  // Ativa ou desativa o menu quando o usuário clica no botão //
 
 function selecionarMarca(marca, botaoClicado) {
     document.querySelectorAll(".botao-marca").forEach(b => b.classList.remove("ativa"));
@@ -333,7 +331,7 @@ function selecionarMarca(marca, botaoClicado) {
             produto.style.display = produto.dataset.marca === marca ? "flex" : "none";
         }
     });
-}
+} // Essa função filtra os produtos pela marca e destaca o botão clicado. //
 
 function filtrarProdutos() {
   const termo = document.getElementById("busca").value.toLowerCase();
@@ -343,8 +341,7 @@ function filtrarProdutos() {
     const nome = produto.querySelector("h3").textContent.toLowerCase();
     produto.style.display = nome.includes(termo) ? "flex" : "none";
   });
-}
+} // Filtra produtos com base no texto digitado no campo de busca. //
 </script>
-
 </body>
 </html>
