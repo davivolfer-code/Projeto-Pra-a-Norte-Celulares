@@ -24,20 +24,26 @@
     /* -------------------------------
        MENU IDÊNTICO AO DA INDEX
     --------------------------------*/
-    header {
-      width: 100%;
-      background-color: #00163A;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 28px;
-      position: sticky;
-      top: 0;
-      z-index: 2000;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      box-sizing: border-box;
-    }
+  header {
+  width: 100%;
+  background-color: #00163A;
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 28px;
+  box-sizing: border-box;
+
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  overflow: hidden;
+
+  font-family: Arial, sans-serif; 
+}
     header img {
       height: 85px;
       width: auto;
@@ -49,14 +55,12 @@
       gap: 28px;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: normal;
-      letter-spacing: 0.5px;
-      transition: 0.25s;
-    }
+   nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.25s;
+  }
 
     nav a:hover {
       opacity: 0.6;
@@ -159,6 +163,7 @@
       color: white;
       text-align: center;
       padding: 15px;
+
     }
   </style>
 </head>
@@ -210,25 +215,6 @@
       <p style="margin-top:8px;">Acompanhe nossas ofertas no Instagram e WhatsApp</p>
     </div>
   </section>
-
-
-
-  <!-- WhatsApp flutuante -->
-  <a href="https://wa.me/5517988280521" target="_blank" 
-     style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-         style="width:40px; height:40px;">
-  </a>
-
-  <!-- Instagram flutuante -->
-  <a href="https://www.instagram.com/pracainformatica" target="_blank"
-     style="position: fixed; bottom: 90px; right: 20px; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
-         style="width:40px; height:40px;">
-  </a>
-
-
 <!-- TITULO PARA AVALIAÇOES -->
 <div class="reviews-header">
   <h2>O que nossos clientes dizem</h2>
@@ -268,6 +254,20 @@
 </div>
   <footer>
     <p>&copy; 2025 Praça Norte Celulares - Todos os Direitos Reservados</p>
+
+    <a href="https://wa.me/5517988280521" target="_blank"
+       style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+           style="width:40px;">
+    </a>
+
+    <a href="https://www.instagram.com/pracainformatica" target="_blank"
+       style="position: fixed; bottom: 90px; right: 20px;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            border-radius: 50%; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+           style="width:40px;">
+              </a>
   </footer>
 </body>
 </html>
