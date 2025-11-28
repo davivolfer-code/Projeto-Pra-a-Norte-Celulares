@@ -7,81 +7,235 @@
   <title>Sobre Nós - Praça Norte Celulares</title>
 
   <style>
-    /* RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* ============================== */
+/*   AVALIAÇÕES - ESTILIZAÇÃO    */
+/* ============================== */
 
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      overflow-x: hidden;
-    }
+.reviews-header {
+  text-align: center;
+  margin: 50px 0 20px 0;
+  padding: 0 15px;
+}
 
-    /* -------------------------------
-       MENU IDÊNTICO AO DA INDEX
-    --------------------------------*/
-  header {
+.reviews-header h2 {
+  color: #00163A;
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.reviews-header .subtitle {
+  color: #555;
+  font-size: 16px;
+}
+
+/* GRID DAS AVALIAÇÕES */
+.reviews-grid {
+  max-width: 1000px;
+  margin: 0 auto 60px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  padding: 0 20px;
+}
+
+/* BOX INDIVIDUAL */
+.review-box {
+  background: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Usuário + avatar */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  background-color: #00163A;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.name {
+  font-size: 17px;
+  color: #00163A;
+}
+
+/* Estrelas */
+.stars {
+  color: #f1c40f;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* Comentário */
+.comment {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ============================== */
+/*   RESPONSIVIDADE AVALIAÇÕES   */
+/* ============================== */
+
+/* Celulares */
+@media (max-width: 650px) {
+
+  .reviews-grid {
+    grid-template-columns: 1fr;  /* vira uma coluna */
+    gap: 18px;
+  }
+
+  .review-box {
+    padding: 18px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .comment {
+    font-size: 14px;
+  }
+
+  .reviews-header h2 {
+    font-size: 22px;
+  }
+}
+
+  /* RESET E BASE */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+  }
+
+  main {
+    flex: 1; 
+  }
+
+  /* =============================== */
+  /* CABEÇALHO RESPONSIVO */
+  /* =============================== */
+
+/* HEADER */
+header {
   width: 100%;
   background-color: #00163A;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 12px 28px;
-  box-sizing: border-box;
-
+  padding: 12px 20px;
   position: sticky;
   top: 0;
   z-index: 2000;
-
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  overflow: hidden;
-
-  font-family: Arial, sans-serif; 
 }
-    header img {
-      height: 85px;
-      width: auto;
-    }
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
+/* LOGO */
+.logo {
+  height: 85px;
+  width: auto;
+  transition: 0.3s;
+}
 
-   nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.25s;
+/* MENU DESKTOP */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.25s;
+}
+
+nav a:hover {
+  opacity: 0.6;
+  transform: translateY(-2px);
+}
+
+/* BOTÃO HAMBÚRGUER */
+.menu-btn {
+  display: none;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ========================== */
+/*      RESPONSIVIDADE        */
+/* ========================== */
+
+@media (max-width: 850px) {
+
+  /* Reduz o logo */
+  .logo {
+    height: 60px;
   }
 
-    nav a:hover {
-      opacity: 0.6;
-      transform: translateY(-2px);
-    }
+  /* Exibe o botão */
+  .menu-btn {
+    display: block;
+  }
 
-    /* RESPONSIVO — IGUAL INDEX */
-    @media (max-width: 850px) {
-      header {
-        padding: 14px 22px;
-      }
+  /* Menu mobile lateral */
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: #00163A;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: right 0.35s ease-in-out;
+    box-shadow: -6px 0 12px rgba(0,0,0,0.35);
+    padding-bottom: 80px;
+  }
 
-      nav {
-        gap: 18px;
-      }
+  nav.active {
+    right: 0;
+  }
 
-      nav a {
-        font-size: 17px;
-        letter-spacing: 0.4px;
-      }
-    }
+  nav a {
+    font-size: 22px;
+  }
+}
 
     .container {
       max-width: 1000px;
@@ -171,15 +325,19 @@
 <body>
 
   <!-- MENU IDÊNTICO AO INDEX -->
-  <header>
-    <a href="index.html"><img src="https://i.postimg.cc/pL2chMs1/Sem-Ti-tulo-2.png" alt="Logo"></a>
-    <nav>
-      <a href="index.html">INÍCIO</a>
-      <a href="produtos.html">PRODUTOS</a>
-      <a href="sobre.html">SOBRE NÓS</a>
-    </nav>
-  </header>
+<header>
+  <a href="index.html">
+    <img class="logo" src="https://i.postimg.cc/pL2chMs1/Sem-Ti-tulo-2.png">
+  </a>
 
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <nav id="menu">
+    <a href="index.html">INÍCIO</a>
+    <a href="produtos.html">PRODUTOS</a>
+    <a href="sobre.html">SOBRE NÓS</a>
+  </nav>
+</header>
   <!-- SEÇÃO SOBRE -->
   <section class="container">
     <div class="sobre-info">
@@ -200,7 +358,6 @@
   <section class="contato-card">
     <h3>Fale Conosco</h3>
     <p><strong>Telefone:</strong> (17) 98828-0521</p>
-    <p><strong>Email:</strong> contato@loja.com</p>
     <p><strong>Horário:</strong> Segunda a domingo, das 10h às 22h</p>
 
     <div class="instagram">
@@ -269,5 +426,11 @@
            style="width:40px;">
               </a>
   </footer>
+  <script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
 </body>
 </html>
